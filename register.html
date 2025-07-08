@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <title>რეგისტრაცია</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="register-background">
+  <header>
+    <div class="logo">
+      <img src="images/Logo.png" alt="Logo" />
+      <span>RPS</span>
+    </div>
+    <nav>
+      <a href="index.html">მთავარი</a>
+      <a href="register.html">რეგისტრაცია</a>
+      <a href="stats.html">სტატისტიკა</a>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <div class="form-wrapper">
+      <h2>დარეგისტრირდი ან შედი</h2>
+      <form id="registerForm">
+        <input type="text" id="regUsername" placeholder="მომხმარებელი" required>
+        <input type="password" id="regPassword" placeholder="პაროლი" required>
+        <label style="color: white; font-size: 14px;">
+          <input type="checkbox" id="togglePassword"> გამოაჩინე პაროლი
+        </label>
+        <button type="submit">რეგისტრაცია / შესვლა</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Rock Paper Scissors Game</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <title>თამაში</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="game-background">
+  <header id="mainHeader">
+    <div class="logo">
+      <img src="images/Logo.png" alt="Logo" />
+      <span>RPS</span>
+    </div>
+    <nav id="navbar">
+      <a href="index.html">მთავარი</a>
+      <a href="register.html">რეგისტრაცია</a>
+      <a href="stats.html">სტატისტიკა</a>
+      <span id="logout" style="display: none; cursor: pointer;">გამოსვლა</span>
+    </nav>
+  </header>
+
+  <main class="game">
+    <h2>შეარჩიე იარაღი</h2>
+    <div class="choices">
+      <img src="images/rock.png" alt="ქვა" onclick="play('rock')" />
+      <img src="images/paper.png" alt="ქაღალდი" onclick="play('paper')" />
+      <img src="images/scissors.png" alt="მაკრატელი" onclick="play('scissors')" />
+    </div>
+    <div id="result"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Rock Paper Scissors Game</p>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button id="scrollToTopBtn" title="ზემოთ დაბრუნება">↑</button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+

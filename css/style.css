@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans Georgian", sans-serif;
+}
+
+body {
+  background-color: #0e1525;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background-color: #0e1220;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  height: 80px;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.logo span {
+  font-size: 26px;
+  color: #f9cf00;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a,
+#logout {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+nav a:hover,
+#logout:hover {
+  color: #f9cf00;
+}
+
+.burger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-page h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.main-page p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+.start-btn {
+  background-color: #f9cf00;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Game choices */
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.choices img {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.choices img:hover {
+  transform: scale(1.1);
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #0e1220;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+/* Forms */
+.form-page h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 300px;
+}
+
+form input,
+form button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+form button {
+  background-color: #f9cf00;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+}
+
+.password-wrapper i {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* Wrapper */
+.form-wrapper {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.form-wrapper h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #f9cf00;
+}
+
+/* Stats */
+.stats-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  margin-top: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #f9cf00;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background-color: #0e1220;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #f9cf00;
+    border-radius: 8px;
+    display: none;
+    z-index: 999;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .choices img {
+    width: 80px;
+  }
+
+  .main-page h1 {
+    font-size: 24px;
+  }
+
+  .main-page p {
+    font-size: 16px;
+  }
+}
+
+/* Background overlays */
+body.home-page::before {
+  content: "";
+  background: url("../images/rps.png") no-repeat center center;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  filter: blur(1px);
+}
+
+body.game-background {
+  background-image: url('../images/pr.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.register-background {
+  background-image: url('../images/rs.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.statistics-background {
+  background-image: url('../images/sp.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.game-background::before,
+body.register-background::before,
+body.statistics-background::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 15, 30, 0.85);
+  z-index: -1;
+}
+
+/* ამოიღე თეთრი ზოლები */
+main, footer {
+  background: transparent !important;
+}
+
+/* მოაშორე ზედმეტი მარჯინები */
+main {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* თუ სხვა div-ებს აქვთ თეთრი ფერი, გაწმინდე */
+body > div {
+  background: transparent !important;
+}
+
+/* footer მჭიდროდ მიუერთოს ბოლოს */
+footer {
+  margin-top: auto;
+}
